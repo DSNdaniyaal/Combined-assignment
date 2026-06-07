@@ -17,9 +17,11 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-reverseString`
 */
-
 function reverseString(str) {
   // Your code here
+  let n=str.length
+  return str.split('').reverse().join('');
+  return str
 }
 
 module.exports = reverseString;

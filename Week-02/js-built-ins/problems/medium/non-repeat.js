@@ -22,5 +22,18 @@
 */
 function nonrepeat(str) {
   // Your code here
+  let map={}
+  for(let i=0;i<str.length;i++){
+      if(!map[str[i]]){
+        map[str[i]] = 1;
+      } else {
+        map[str[i]]++;
+      }
+  }
+
+  let filtered =  Object.keys(map).filter(key => map[key] === 1)
+
+  if(filtered.length === 0) return null
+  return filtered[0]
 }
 module.exports = nonrepeat;

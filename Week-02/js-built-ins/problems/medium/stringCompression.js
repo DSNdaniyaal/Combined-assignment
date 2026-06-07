@@ -22,6 +22,18 @@
 */
 function compression(str) {
   // Your code here
+  let n=str.length,cnt = 1,ans=""
+  if(n===0) return ans;
+
+  for(let i=1;i<n;i++){
+    if(str[i]!==str[i-1]){
+        ans = ans+str[i-1]+ ((cnt>1)? (cnt).toString(): '')
+        cnt = 1;
+    } else {
+      cnt++;
+    }
+  }
+    return ans+str[n-1]+ ((cnt>1)? (cnt).toString(): '')
 }
 
 module.exports = compression;

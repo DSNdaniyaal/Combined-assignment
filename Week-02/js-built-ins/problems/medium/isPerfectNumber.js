@@ -27,6 +27,12 @@
 
 function isPerfectNumber(num) {
   // Your code here
+  let val = 0;
+  for(let i=1;i<=num/2;i++){
+    if(num%i === 0) val+=i;
+  }
+
+  return val===num
 }
 
 module.exports = { isPerfectNumber };

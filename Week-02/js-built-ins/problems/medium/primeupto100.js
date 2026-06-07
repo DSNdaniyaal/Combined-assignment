@@ -17,6 +17,21 @@
 
 function getPrimesUpTo100() {
   // Your code here
+  let values = Array(101).fill(true)
+  values[0] = false;
+  values[1] = false;
+  for(let i=2;i<=100;i++){
+    let curr=2;
+    while(i*curr<= 100){
+      values[i*curr] = false;
+      curr++;
+    }
+  }
+
+  return values.reduce((acc, value, index) => {
+  if (value) acc.push(index);
+  return acc;
+}, []);
 }
 
 module.exports = { getPrimesUpTo100 };
